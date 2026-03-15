@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMC / MSS / ICT Setup Terminal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Setup Terminal</h1>
+      <p>Realtime Forex + Commodities chart focused on MSS, SMC, ICT, Order Block & FVG</p>
+    </div>
+    <div class="status-pill" id="connStatus">Connecting...</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel chart-panel">
+      <div class="toolbar">
+        <label>
+          Instrument
+          <select id="instrumentSelect"></select>
+        </label>
+        <span class="legend">Candle interval: 5s</span>
+      </div>
+      <div id="chart"></div>
+    </section>
+
+    <aside class="panel side-panel">
+      <h2>Auto Trade Templates</h2>
+      <div class="templates">
+        <button class="tpl" data-bias="LONG">Arm Long Template</button>
+        <button class="tpl" data-bias="SHORT">Arm Short Template</button>
+      </div>
+      <div id="armedState" class="muted">No template armed</div>
+
+      <h2>Signals</h2>
+      <ul id="signalFeed" class="feed"></ul>
+
+      <h2>Realtime Backtest View</h2>
+      <div class="stats">
+        <div><span>Total Trades:</span> <strong id="totalTrades">0</strong></div>
+        <div><span>Wins:</span> <strong id="wins">0</strong></div>
+        <div><span>Losses:</span> <strong id="losses">0</strong></div>
+        <div><span>Win Rate:</span> <strong id="winRate">0%</strong></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

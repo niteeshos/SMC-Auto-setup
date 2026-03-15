@@ -1,0 +1,114 @@
+:root {
+  --bg: #0b0f17;
+  --panel: #111827;
+  --border: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --green: #16a34a;
+  --red: #dc2626;
+  --amber: #f59e0b;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+h1 { margin: 0; font-size: 1.25rem; }
+p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.9rem; }
+
+.status-pill {
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+select {
+  margin-top: 0.35rem;
+  background: #020617;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem;
+}
+
+#chart {
+  height: 520px;
+}
+
+.legend, .muted { color: var(--muted); font-size: 0.85rem; }
+h2 { font-size: 1rem; margin: 0.75rem 0; }
+.templates { display: flex; gap: 0.6rem; }
+.tpl {
+  flex: 1;
+  background: #1e293b;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+.feed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 240px;
+  overflow: auto;
+}
+.feed li {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--amber);
+  border-radius: 8px;
+  padding: 0.55rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  background: #0f172a;
+}
+.feed li.long { border-left-color: var(--green); }
+.feed li.short { border-left-color: var(--red); }
+
+.stats div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border);
+  padding: 0.45rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+  #chart { height: 380px; }
+}

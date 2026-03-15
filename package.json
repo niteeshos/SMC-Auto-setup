@@ -1,0 +1,9 @@
+{
+  "name": "smc-auto-setup-terminal",
+  "version": "1.0.0",
+  "description": "Realtime SMC/MSS/ICT setup terminal with forex and commodities candles",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
